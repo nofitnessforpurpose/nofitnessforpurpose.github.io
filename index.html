@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="dcterms.rightsHolder" content="NotFitForPurpose">
+<meta name="dcterms.rights" content="Copyright all rights reserved">
+<meta name="dcterms.dateCopyrighted" content="2025">
+
+<style>
+ul, #myUL {
+  list-style-type: none;
+}
+
+#myUL {
+  margin: 0;
+  padding: 10;
+}
+
+.caret {
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari 3.1+ */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none;
+}
+
+.caret::before {
+  content: "\25B6";
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.caret-down::before {
+  -ms-transform: rotate(90deg); /* IE 9 */
+  -webkit-transform: rotate(90deg); /* Safari */'
+  transform: rotate(90deg);  
+}
+
+.nested {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<h2>github - Curated Tree View</h2>
+<p>This tree view represents a hierarchical view of information in my <a  target="_blank" rel="noopener noreferrer" href="https://github.com/nofitnessforpurpose?tab=repositories">GitHub repositories</a>.</p>
+<p>Hint - Click on the arrow(s) to open or close the tree branches.</p>
+
+<ul id="myUL">
+  <li><span class="caret">Organisers</span>
+    <ul class="nested">
+	  <a target="_blank" rel="noopener noreferrer" href="https://gist.github.com/nofitnessforpurpose">GISTS</a><BR>
+      <li><span class="caret">Organiser 1</span>
+	    <ul class="nested">
+		  <li><span class="caret">Cases</span>
+            <ul class="nested">
+		      <li><span class="caret">Data Pack</span>
+                 <ul class="nested">
+		            <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:PSION+topic:Side-Slot+topic:DataPack&type=repositories">Data Packs</a><BR>
+			     </ul>
+               </li>
+               <li><span class="caret">Top Slot</span>
+                 <ul class="nested">
+		            This device has no Top Slot
+                 </ul>
+			  </li>
+			</ul>  
+		  </li>	
+		  <li><span class="caret">Software</span>
+            <ul class="nested">
+				<a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:PSION+topic:OPL+topic:Organiser1&type=repositories">All Organiser 1</a>
+			</ul>
+          </li> 			
+		</ul>
+	  </li>
+      <li><span class="caret">Organiser 2</span>
+	    <ul class="nested">
+		  <li><span class="caret">Cases</span>
+            <ul class="nested">
+		      <li><span class="caret">Data Pack</span>
+                 <ul class="nested">
+		            <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:PSION+topic:Side-Slot+topic:DataPack&type=repositories">Data Packs</a><BR>
+			     </ul>
+               </li>
+               <li><span class="caret">Top Slot</span>
+                 <ul class="nested">
+		           <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:PSION+topic:Top-Slot-case+topic:Organiser2&type=repositories">All Top Slot Cases</a><BR>
+				   
+				   <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:PSION+topic:Top-Slot-case+topic:small+topic:Organiser2&type=repositories">Classic Format Top Slot Cases</a>
+				   
+   				 </ul>
+			  </li>
+			</ul>  
+		  </li>	
+		  <li><span class="caret">Memory Protection</span>
+            <ul class="nested">
+				<a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:PSION+topic:memory-protection+topic:Organiser2&type=repositories">All Memory Protection Devices</a>
+			</ul>
+          </li> 					  
+		  <li><span class="caret">PCB's</span>
+            <ul class="nested">
+				<a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:PSION+topic:pcb+topic:Organiser2&type=repositories">All Organiser 2 PCB's</a>
+			</ul>
+          </li> 					  
+		  <li><span class="caret">Software</span>
+            <ul class="nested">
+				<a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:PSION+topic:OPL+topic:Organiser2&type=repositories">All Organiser 2</a>
+			</ul>
+          </li> 			
+		</ul>		
+		</ul>
+	  </li>
+    </ul>
+  </li>
+</ul>
+
+<script>
+var toggler = document.getElementsByClassName("caret");
+var i;
+
+for (i = 0; i < toggler.length; i++) {
+  toggler[i].addEventListener("click", function() {
+    this.parentElement.querySelector(".nested").classList.toggle("active");
+    this.classList.toggle("caret-down");
+  });
+}
+</script>
+
+</body>
+</html>
