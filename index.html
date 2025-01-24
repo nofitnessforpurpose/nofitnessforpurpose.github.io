@@ -1,58 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="dcterms.rightsHolder" content="NotFitForPurpose">
-<meta name="dcterms.rights" content="Copyright all rights reserved">
-<meta name="dcterms.dateCopyrighted" content="2025">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="dcterms.rightsHolder" content="NotFitForPurpose">
+  <meta name="dcterms.rights" content="Copyright all rights reserved">
+  <meta name="dcterms.dateCopyrighted" content="2025">
 
-<style>
-ul, #myUL {
-  list-style-type: none;
-}
+  <style>
+    ul, #myUL {
+      list-style-type: none;
+    }
 
-#myUL {
-  margin: 0;
-  padding: 10;
-}
+    #myUL {
+      margin: 0;
+      padding: 10;
+    }
 
-.caret {
-  cursor: pointer;
-  -webkit-user-select: none; /* Safari 3.1+ */
-  -moz-user-select: none; /* Firefox 2+ */
-  -ms-user-select: none; /* IE 10+ */
-  user-select: none;
-}
+    .caret {
+      cursor: pointer;
+      -webkit-user-select: none; /* Safari 3.1+ */
+      -moz-user-select: none; /* Firefox 2+ */
+      -ms-user-select: none; /* IE 10+ */
+      user-select: none;
+    }
 
-.caret::before {
-  content: "\25B6";
-  color: black;
-  display: inline-block;
-  margin-right: 6px;
-}
+    .caret::before {
+      content: "\25B6";
+      color: black;
+      display: inline-block;
+      margin-right: 6px;
+    }
 
-.caret-down::before {
-  -ms-transform: rotate(90deg); /* IE 9 */
-  -webkit-transform: rotate(90deg); /* Safari */'
-  transform: rotate(90deg);  
-}
+    .caret-down::before {
+      -ms-transform: rotate(90deg); /* IE 9 */
+      -webkit-transform: rotate(90deg); /* Safari */'
+      transform: rotate(90deg);  
+    }
 
-.nested {
-  display: none;
-}
+    .nested {
+      display: none;
+    }
 
-.active {
-  display: block;
-}
-</style>
+    .active {
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      padding: 3px;
+      background-color: Silver;
+      color: black;
+    }
+  </style>
 </head>
-	
+
 <body>
-<img src="NFP-01.jpg" alt="Logo" width = 50>
-<h1>github - Curated Tree View</h1>
-<p>This tree view represents a hierarchical view of information in my <a  target="_blank" rel="noopener noreferrer" href="https://github.com/nofitnessforpurpose?tab=repositories">GitHub repositories</a>.</p>
-<p>Hint - Click on the arrow(s) to expand / open or collapse / close the nodes.</p>
+  <TABLE>
+    <TR>
+	  <TD>
+        <img src="./images/NFP-01.jpg" alt="Logo" width="100">
+	  </TD>	
+      <TD>
+	    <h1>&nbsp;&nbsp;github - Curated Tree View</h1>
+	  </TD>
+    </TR>	  
+  </TABLE>
+  
+<p>This view presents a hierarchical view of information in my <a  target="_blank" rel="noopener noreferrer" href="https://github.com/nofitnessforpurpose?tab=repositories">GitHub repositories</a>.</p>
+<p>Hint - Click on the arrow(s) to open or close the tree branches.</p>
 
 <ul id="myUL">
   <li><span class="caret">Organisers</span>
@@ -64,7 +80,7 @@ ul, #myUL {
             <ul class="nested">
 		      <li><span class="caret">Data Pack</span>
                  <ul class="nested">
-		            <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:PSION+topic:Side-Slot+topic:DataPack&type=repositories">All Compatible Data Packs</a><BR>
+		            <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:PSION+topic:Side-Slot+topic:DataPack&type=repositories">Data Packs</a><BR>
 			     </ul>
                </li>
                <li><span class="caret">Top Slot</span>
@@ -133,11 +149,14 @@ for (i = 0; i < toggler.length; i++) {
   });
 }
 </script>
+<BR>
+<BR>
+
+</body>
 
 <footer>
   <p>Author: NotFitForPurpose</p>
   <p>(c) NotFitForPurpose 2024, 2025 All Rights Reserved.</p>
 </footer> 
 
-</body>
 </html>
