@@ -67,7 +67,7 @@
     </TR>	  
   </TABLE>
   
-<p>This view presents a hierarchical view of information in my <a  target="_blank" rel="noopener noreferrer" href="https://github.com/nofitnessforpurpose?tab=repositories">GitHub repositories</a>.</p>
+<p>This view presents a hierarchical view of information in my <span id="RePoCount"></span> <a  target="_blank" rel="noopener noreferrer" href="https://github.com/nofitnessforpurpose?tab=repositories">GitHub repositories</a>.</p>
 <p>Hint - Click on the arrow(s) to expand / open or collapse / close the nodes.</p>
 
 <ul id="myUL">
@@ -180,5 +180,11 @@ for (i = 0; i < toggler.length; i++) {
   <p>Author: NotFitForPurpose</p>
   <p style="color:#ccd1d1">(c) NotFitForPurpose 2024, 2025 All Rights Reserved.</p>
 </footer> 
+
+<script>
+  const resp  = await fetch("https://api.github.com/users/{username}")
+  const data = await resp.json();
+  document.getElementById("RePoCount").innerHTML = data;	
+</script>	
 
 </html>
