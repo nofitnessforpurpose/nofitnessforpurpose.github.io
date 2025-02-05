@@ -182,7 +182,7 @@ for (i = 0; i < toggler.length; i++) {
 </footer> 
 
 <script>
-  const resp  = await fetch("https://api.github.com/users/nofitnessforpurpose")
+  const resp  = await fetch("https://api.github.com/users/nofitnessforpurpose/repos")
   const data = await resp.json();
   document.getElementById("RePoCount").innerHTML = data;	
 </script>	
