@@ -184,7 +184,8 @@ for (i = 0; i < toggler.length; i++) {
 <script>
   const resp  = await fetch("https://api.github.com/users/nofitnessforpurpose/repos")
   const data = await resp.json();
-  document.getElementById("RePoCount").innerHTML = data;	
+  var count = data.length;
+  document.getElementById("RePoCount").innerHTML = count;	
 </script>	
 
 </html>
