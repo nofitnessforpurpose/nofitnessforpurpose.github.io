@@ -69,6 +69,11 @@
       color: #ccc;
     }
 
+    /* Invert all images in dark mode */
+    body.dark-mode img {
+      filter: invert(1) hue-rotate(180deg);
+    }
+
     /* Toggle button */
     #darkModeToggle {
       position: fixed;
@@ -107,7 +112,6 @@
   <p>This view presents a hierarchical view of information in my <span id="RePoCount"></span> public <a target="_blank" rel="noopener noreferrer" href="https://github.com/nofitnessforpurpose?tab=repositories">GitHub repositories</a>.</p>
   <p>Hint - Click on the arrow(s) to expand / open or collapse / close the nodes.</p>
 
-  <!-- ORIGINAL TOPICS PRESERVED -->
   <ul id="myUL">
     <li>
       <span class="caret"><a href="https://github.com/nofitnessforpurpose?tab=repositories">Organisers</a></span>
