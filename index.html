@@ -1,60 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="dcterms.rightsHolder" content="NotFitForPurpose">
-  <meta name="dcterms.rights" content="Copyright all rights reserved">
-  <meta name="dcterms.dateCopyrighted" content="2025">
-  <meta name="description" content="Author: NoFitnessForPurpose, Illustrator: NoFitnessForPurpose, Category: Computers">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NFfP GitHub Landing Page</title>
   <style>
     body {
-      background-color: white;
-      color: black;
       font-family: Arial, sans-serif;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    ul, #myUL {
-      list-style-type: none;
+      background-color: #fff;
+      color: #000;
       margin: 0;
-      padding: 10;
-    }
-
-    .caret {
-      cursor: pointer;
-      user-select: none;
-    }
-
-    .caret::before {
-      content: "\25B6";
-      color: inherit;
-      display: inline-block;
-      margin-right: 6px;
-    }
-
-    .caret-down::before {
-      transform: rotate(90deg);
-    }
-
-    .nested {
-      display: none;
-      margin-left: 15px;
-    }
-
-    .active {
-      display: block;
-    }
-
-    footer {
-      text-align: center;
-      padding: 3px;
-      background-color: Silver;
-      color: black;
+      padding: 0;
       transition: background-color 0.3s, color 0.3s;
     }
 
-    /* Dark mode styles */
+    /* Dark mode base */
     body.dark-mode {
       background-color: #121212;
       color: #e0e0e0;
@@ -86,126 +46,152 @@
       border-radius: 6px;
       font-size: 14px;
       transition: background 0.3s, color 0.3s;
+      z-index: 1000;
     }
 
     body.dark-mode #darkModeToggle {
       background: #333;
       color: #fff;
     }
+
+    /* Tree view styling */
+    ul, #myUL {
+      list-style-type: none;
+    }
+
+    #myUL {
+      margin: 0;
+      padding: 0;
+    }
+
+    .caret {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .caret::before {
+      content: "\25B6";
+      color: gray;
+      display: inline-block;
+      margin-right: 6px;
+    }
+
+    .caret-down::before {
+      transform: rotate(90deg);
+    }
+
+    .nested {
+      display: none;
+      margin-left: 20px;
+    }
+
+    .active {
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+      background: #f0f0f0;
+    }
   </style>
 </head>
-
 <body>
-  <button id="darkModeToggle">🌙 Dark Mode</button>
+  <!-- Dark Mode Toggle Button -->
+  <button id="darkModeToggle">Toggle Dark Mode</button>
 
-  <table>
-    <tr>
-      <td>
-        <img src="./images/NFP-01.jpg" alt="Logo" width="100">
-      </td>
-      <td>
-        <h1>&nbsp;&nbsp;GitHub - Curated View</h1>
-      </td>
-    </tr>
-  </table>
+  <h2>NFfP GitHub Landing Page</h2>
+  <img src="NFP-01.jpg" alt="NFfP Logo" width="200">
 
-  <p>This view presents a hierarchical view of information in my <span id="RePoCount"></span> public <a target="_blank" rel="noopener noreferrer" href="https://github.com/nofitnessforpurpose?tab=repositories">GitHub repositories</a>.</p>
-  <p>Hint - Click on the arrow(s) to expand / open or collapse / close the nodes.</p>
-
+  <!-- Full tree structure -->
   <ul id="myUL">
     <li>
       <span class="caret"><a href="https://github.com/nofitnessforpurpose?tab=repositories">Organisers</a></span>
       <ul class="nested">
         <a target="_blank" rel="noopener noreferrer" href="https://gist.github.com/nofitnessforpurpose">GISTS</a><br>
+
         <!-- Organiser I -->
-        <li>
-          <span class="caret"><a href="https://github.com/search?q=topic:nffp+topic:PSION+topic:Organiser1&type=repositories">Organiser 1</a></span>
+        <li><span class="caret"><a href="https://github.com/search?q=topic:nffp+topic:PSION+topic:Organiser1&type=repositories">Organiser 1</a></span>
           <ul class="nested">
-            <li>
-              <span class="caret">Cases</span>
+            <li><span class="caret">Cases</span>
               <ul class="nested">
-                <li>
-                  <span class="caret">Data Pack</span>
+                <li><span class="caret">Data Pack</span>
                   <ul class="nested">
                     <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:Side-Slot+topic:DataPack+topic:case&type=repositories">All Compatible Data Packs</a><br>
                   </ul>
                 </li>
-                <li>
-                  <span class="caret">Top Slot</span>
+              </ul>
+            </li>
+            <li><span class="caret">PCB’s</span>
+              <ul class="nested">
+                <li><span class="caret">Memory Packs</span>
                   <ul class="nested">
-                    This device has no Top Slot
-                  </ul>
-                </li>
-                <li>
-                  <span class="caret">Covers</span>
-                  <ul class="nested">
-                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:cover+topic:Organiser1&type=repositories">All Covers</a><br>
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:Organiser1+topic:PCB+topic:RAM&type=repositories">All Memory Packs</a><br>
                   </ul>
                 </li>
               </ul>
             </li>
-            <li>
-              <span class="caret">PCB's</span>
+            <li><span class="caret">Software</span>
               <ul class="nested">
-                <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:pcb+topic:Organiser1&type=repositories">All Organiser 1 PCB's</a>
-              </ul>
-            </li>
-            <li>
-              <span class="caret">Software</span>
-              <ul class="nested">
-                <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:OPL+topic:Organiser1&type=repositories">All Organiser 1</a>
+                <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:Organiser1+topic:Software&type=repositories">All Software</a></li>
               </ul>
             </li>
           </ul>
         </li>
+
         <!-- Organiser II -->
-        <li>
-          <span class="caret"><a href="https://github.com/search?q=topic:PSION+topic:Organiser2&type=repositories">Organiser 2</a></span>
+        <li><span class="caret"><a href="https://github.com/search?q=topic:nffp+topic:PSION+topic:OrganiserII&type=repositories">Organiser II</a></span>
           <ul class="nested">
-            <li>
-              <span class="caret">Cases</span>
+            <li><span class="caret">Cases</span>
               <ul class="nested">
-                <li>
-                  <span class="caret">Data Pack</span>
+                <li><span class="caret">Data Pack</span>
                   <ul class="nested">
-                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:Side-Slot+topic:DataPack+topic:case&type=repositories">All Compatible Data Pack Cases</a><br>
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:Side-Slot+topic:DataPack+topic:case&type=repositories">All Compatible Data Packs</a><br>
                   </ul>
                 </li>
-                <li>
-                  <span class="caret">Top Slot</span>
+                <li><span class="caret">Comms Link</span>
                   <ul class="nested">
-                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:Top-Slot-case+topic:Organiser2&type=repositories">All Top Slot Cases</a><br>
-                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:Top-Slot-case+topic:small+topic:Organiser2&type=repositories">Classic Format Top Slot Cases</a><br>
-                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:Top-Slot-case+topic:large+topic:Organiser2&type=repositories">Large Format Top Slot Cases</a>
-                  </ul>
-                </li>
-                <li>
-                  <span class="caret">Covers</span>
-                  <ul class="nested">
-                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:cover+topic:Organiser2&type=repositories">All Covers</a><br>
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:CommsLink+topic:case&type=repositories">All Compatible Comms Links</a><br>
                   </ul>
                 </li>
               </ul>
             </li>
-            <li>
-              <span class="caret">Memory Protection</span>
+            <li><span class="caret">Covers</span>
               <ul class="nested">
-                <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:memory-protection+topic:Organiser2&type=repositories">All Memory Protection Devices</a><br>
-                <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:memory-protection+topic:Organiser2+topic:basic&type=repositories">Protect Basic</a><br>
-                <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:memory-protection+topic:Organiser2+topic:plus&type=repositories">Protect Plus</a><br>
-                <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:memory-protection+topic:Organiser2+topic:advanced&type=repositories">Protect Advanced</a><br>
+                <li><span class="caret">Organiser II</span>
+                  <ul class="nested">
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:OrganiserII+topic:cover&type=repositories">All Organiser II Covers</a><br>
+                  </ul>
+                </li>
               </ul>
             </li>
-            <li>
-              <span class="caret">PCB's</span>
+            <li><span class="caret">Memory Protection</span>
               <ul class="nested">
-                <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:pcb+topic:Organiser2&type=repositories">All Organiser 2 PCB's</a>
+                <li><span class="caret">Data Pack</span>
+                  <ul class="nested">
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:DataPack+topic:protector&type=repositories">All Memory Protectors</a><br>
+                  </ul>
+                </li>
               </ul>
             </li>
-            <li>
-              <span class="caret">Software</span>
+            <li><span class="caret">PCB’s</span>
               <ul class="nested">
-                <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:OPL+topic:Organiser2&type=repositories">All Organiser 2</a>
+                <li><span class="caret">Memory Packs</span>
+                  <ul class="nested">
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:OrganiserII+topic:PCB+topic:RAM&type=repositories">All Memory Packs</a><br>
+                  </ul>
+                </li>
+                <li><span class="caret">Comms Link</span>
+                  <ul class="nested">
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:CommsLink+topic:PCB&type=repositories">All Comms Links</a><br>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><span class="caret">Software</span>
+              <ul class="nested">
+                <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:OrganiserII+topic:Software&type=repositories">All Software</a></li>
               </ul>
             </li>
           </ul>
@@ -214,41 +200,38 @@
     </li>
   </ul>
 
+  <footer>
+    <p>NFfP © 2025</p>
+  </footer>
+
   <script>
-    // Caret expand/collapse
-    var toggler = document.getElementsByClassName("caret");
+    // Dark mode handling
+    const toggleButton = document.getElementById("darkModeToggle");
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+    // Load preference from localStorage
+    if (localStorage.getItem("darkMode") === "enabled" ||
+        (!localStorage.getItem("darkMode") && prefersDarkScheme.matches)) {
+      document.body.classList.add("dark-mode");
+    }
+
+    toggleButton.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("darkMode", "enabled");
+      } else {
+        localStorage.setItem("darkMode", "disabled");
+      }
+    });
+
+    // Tree view expand/collapse
+    const toggler = document.getElementsByClassName("caret");
     for (let i = 0; i < toggler.length; i++) {
       toggler[i].addEventListener("click", function() {
         this.parentElement.querySelector(".nested").classList.toggle("active");
         this.classList.toggle("caret-down");
       });
     }
-
-    // Dark mode toggle
-    const toggleBtn = document.getElementById("darkModeToggle");
-    toggleBtn.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-      toggleBtn.textContent = document.body.classList.contains("dark-mode") ? "☀️ Light Mode" : "🌙 Dark Mode";
-    });
-  </script>
-
-  <br><br>
-
-  <footer>
-    <p>Author: NotFitForPurpose</p>
-    <p style="color:#ccd1d1">(c) NotFitForPurpose 2024, 2025 All Rights Reserved.</p>
-  </footer>
-
-  <!-- Get the number of repositories -->
-  <script>
-    async function updateRepoCount() {
-      const response = await fetch("https://api.github.com/users/nofitnessforpurpose/repos");
-      const data = await response.json();
-      var count = data.length;
-      document.getElementById("RePoCount").innerHTML = count - 2;
-    }
-    updateRepoCount();
   </script>
 </body>
 </html>
-
