@@ -51,16 +51,16 @@
     /* Logo container to match dark mode background */
     .logo-container {
       display: inline-block;
-      background-color: white; /* light mode background */
-      padding: 2px; /* optional spacing */
+      background-color: white; /* light mode */
+      padding: 2px;
     }
 
     body.dark-mode .logo-container {
-      background-color: #121212; /* match dark page background */
+      background-color: #121212; /* match page background */
     }
 
     body.dark-mode .logo-container img {
-      filter: invert(1) hue-rotate(180deg);
+      filter: invert(1) brightness(2); /* keeps the background light */
     }
 
     ul, #myUL {
@@ -264,4 +264,5 @@
   </script>
 </body>
 </html>
+
 
