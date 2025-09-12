@@ -29,10 +29,6 @@
       color: #ccc;
     }
 
-    body.dark-mode img {
-      filter: invert(1) hue-rotate(180deg);
-    }
-
     #darkModeToggle {
       position: fixed;
       top: 10px;
@@ -50,6 +46,21 @@
     body.dark-mode #darkModeToggle {
       background: #333;
       color: #fff;
+    }
+
+    /* Logo container to match dark mode background */
+    .logo-container {
+      display: inline-block;
+      background-color: white; /* light mode background */
+      padding: 2px; /* optional spacing */
+    }
+
+    body.dark-mode .logo-container {
+      background-color: #121212; /* match dark page background */
+    }
+
+    body.dark-mode .logo-container img {
+      filter: invert(1) hue-rotate(180deg);
     }
 
     ul, #myUL {
@@ -103,7 +114,9 @@
   <table>
     <tr>
       <td>
-        <img src="./images/NFP-01.jpg" alt="Logo" width="100">
+        <div class="logo-container">
+          <img src="./images/NFP-01.jpg" alt="Logo" width="100">
+        </div>
       </td>
       <td>
         <h1>&nbsp;&nbsp;github - Curated View</h1>
