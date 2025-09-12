@@ -48,19 +48,15 @@
       color: #fff;
     }
 
-    /* Logo container to match dark mode background */
+    /* Logo container no longer inverts the image */
     .logo-container {
       display: inline-block;
-      background-color: white; /* light mode */
+      background-color: white; /* light mode background */
       padding: 2px;
     }
 
     body.dark-mode .logo-container {
       background-color: #121212; /* match page background */
-    }
-
-    body.dark-mode .logo-container img {
-      filter: invert(1) brightness(2); /* keeps the background light */
     }
 
     ul, #myUL {
@@ -115,11 +111,11 @@
     <tr>
       <td>
         <div class="logo-container">
-          <img src="./images/NFP-01.jpg" alt="Logo" width="100">
+          <img src="./images/NFP-01.png" alt="Logo" width="100">
         </div>
       </td>
       <td>
-        <h1>&nbsp;&nbsp;GitHub - Curated View</h1>
+        <h1>&nbsp;&nbsp;github - Curated View</h1>
       </td>
     </tr>
   </table>
@@ -221,10 +217,10 @@
   </footer>
 
   <script>
-    // Dark mode with persistence
+    // Dark mode toggle with persistence
     const toggleBtn = document.getElementById("darkModeToggle");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
-    
+
     if (localStorage.getItem("darkMode") === "enabled" || (!localStorage.getItem("darkMode") && prefersDark.matches)) {
       document.body.classList.add("dark-mode");
       toggleBtn.textContent = "☀️ Light Mode";
@@ -264,5 +260,3 @@
   </script>
 </body>
 </html>
-
-
