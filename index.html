@@ -84,6 +84,7 @@
       border: none;
       border-radius: 4px;
       cursor: pointer;
+      z-index: 1000;
     }
 
     body.dark-mode #darkModeToggle {
@@ -112,9 +113,93 @@
   </p>
   <p>Hint - Click on the arrow(s) to expand / open or collapse / close the nodes.</p>
 
-  <!-- (Your existing UL content unchanged) -->
+  <!-- Full Hierarchy Restored -->
   <ul id="myUL">
-    <!-- ... full hierarchy here ... -->
+    <li><span class="caret"><a href="https://github.com/nofitnessforpurpose?tab=repositories">Organisers</a></span>
+      <ul class="nested">
+        <a target="_blank" rel="noopener noreferrer" href="https://gist.github.com/nofitnessforpurpose">GISTS</a><br>
+        
+        <!-- Organiser I -->
+        <li><span class="caret"><a href="https://github.com/search?q=topic:nffp+topic:PSION+topic:Organiser1&type=repositories">Organiser 1</a></span>
+          <ul class="nested">
+            <li><span class="caret">Cases</span>
+              <ul class="nested">
+                <li><span class="caret">Data Pack</span>
+                  <ul class="nested">
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:Side-Slot+topic:DataPack+topic:case&type=repositories">All Compatible Data Packs</a><br>
+                  </ul>
+                </li>
+                <li><span class="caret">Top Slot</span>
+                  <ul class="nested">
+                    This device has no Top Slot
+                  </ul>
+                </li>
+                <li><span class="caret">Covers</span>
+                  <ul class="nested">
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:cover+topic:Organiser1&type=repositories">All Covers</a><br>
+                  </ul>
+                </li>
+              </ul>  
+            </li>	
+            <li><span class="caret">PCB's</span>
+              <ul class="nested">
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:pcb+topic:Organiser1&type=repositories">All Organiser 1 PCB's</a>
+              </ul>
+            </li>		  
+            <li><span class="caret">Software</span>
+              <ul class="nested">
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:OPL+topic:Organiser1&type=repositories">All Organiser 1</a>
+              </ul>
+            </li> 			
+          </ul>
+        </li>
+
+        <!-- Organiser II -->
+        <li><span class="caret"><a href="https://github.com/search?q=topic:PSION+topic:Organiser2&type=repositories">Organiser 2</a></span>
+          <ul class="nested">
+            <li><span class="caret">Cases</span>
+              <ul class="nested">
+                <li><span class="caret">Data Pack</span>
+                  <ul class="nested">
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:Side-Slot+topic:DataPack+topic:case&type=repositories">All Compatible Data Pack Cases</a><br>
+                  </ul>
+                </li>
+                <li><span class="caret">Top Slot</span>
+                  <ul class="nested">
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:Top-Slot-case+topic:Organiser2&type=repositories">All Top Slot Cases</a><br>
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:Top-Slot-case+topic:small+topic:Organiser2&type=repositories">Classic Format Top Slot Cases</a><br>
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:Top-Slot-case+topic:large+topic:Organiser2&type=repositories">Large Format Top Slot Cases</a>
+                  </ul>
+                </li>
+                <li><span class="caret">Covers</span>
+                  <ul class="nested">
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:cover+topic:Organiser2&type=repositories">All Covers</a><br>
+                  </ul>
+                </li>
+              </ul>  
+            </li>	
+            <li><span class="caret">Memory Protection</span>
+              <ul class="nested">
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:memory-protection+topic:Organiser2&type=repositories">All Memory Protection Devices</a><br>
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:memory-protection+topic:Organiser2+topic:basic&type=repositories">Protect Basic</a><br>
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:memory-protection+topic:Organiser2+topic:plus&type=repositories">Protect Plus</a><br>
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:memory-protection+topic:Organiser2+topic:advanced&type=repositories">Protect Advanced</a><br>
+              </ul>
+            </li> 					  
+            <li><span class="caret">PCB's</span>
+              <ul class="nested">
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:pcb+topic:Organiser2&type=repositories">All Organiser 2 PCB's</a>
+              </ul>
+            </li> 					  
+            <li><span class="caret">Software</span>
+              <ul class="nested">
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/search?q=topic:nffp+topic:PSION+topic:OPL+topic:Organiser2&type=repositories">All Organiser 2</a>
+              </ul>
+            </li> 			
+          </ul>		
+        </li>
+      </ul>
+    </li>
   </ul>
 
   <script>
