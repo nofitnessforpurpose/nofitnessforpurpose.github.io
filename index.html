@@ -233,7 +233,7 @@
   <footer>
     <p>NotFitForPurpose is a creator thinking about the importance of being more than fit for the status quo.</p>
     <p>Author: NotFitForPurpose</p>
-    <p style="color:#ccd1d1">(c) NotFitForPurpose 2024, 2025, 2026 All Rights Reserved.</p>
+    <p style="color:#ccd1d1">(c) NotFitForPurpose 2024, 2025 All Rights Reserved.</p>
   </footer>
 
   <script>
@@ -281,6 +281,16 @@
         // Enhance search links into foldable carets
         const links = document.querySelectorAll('a[href^="https://github.com/search?q="]');
         links.forEach(link => {
+          // Ignore the "Organiser" top-level titles so we don't accidentally nest carets inside carets and ruin the sub-categories!
+          if (link.closest('.caret')) {
+            // Also, to completely prevent accidental rate-limit hits when clicking the main Organiser titles, 
+            // we can remove the href so it just acts as a pure folding toggle folder.
+            link.removeAttribute('href');
+            link.style.cursor = 'pointer';
+            link.style.color = window.matchMedia("(prefers-color-scheme: dark)").matches || document.body.classList.contains("dark-mode") ? '#9ecbff' : 'blue';
+            return;
+          }
+
           const url = new URL(link.href);
           const query = url.searchParams.get('q');
           if (!query) return;
