@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="dcterms.rightsHolder" content="NotFitForPurpose">
   <meta name="dcterms.rights" content="Copyright all rights reserved">
-  <meta name="dcterms.dateCopyrighted" content="2025">
+  <meta name="dcterms.dateCopyrighted" content="2026">
   <meta name="description" content="Author: NoFitnessForPurpose, Illustrator: NoFitnessForPurpose, Category: Computers">
 
   <style>
@@ -269,14 +269,85 @@
       });
     }
 
-    // GitHub repo count
-    async function updateRepoCount() {
-      const response = await fetch("https://api.github.com/users/nofitnessforpurpose/repos");
-      const data = await response.json();
-      const count = data.length;
-      document.getElementById("RePoCount").innerHTML = count - 2;
+    // GitHub repo count and dynamic search lists
+    async function initGitHubData() {
+      try {
+        const response = await fetch("repos.json");
+        const repos = await response.json();
+        
+        // Update RePoCount statically
+        document.getElementById("RePoCount").innerHTML = repos.length > 2 ? repos.length - 2 : repos.length;
+
+        // Enhance search links into foldable carets
+        const links = document.querySelectorAll('a[href^="https://github.com/search?q="]');
+        links.forEach(link => {
+          const url = new URL(link.href);
+          const query = url.searchParams.get('q');
+          if (!query) return;
+
+          // Parse topics like "topic:nffp"
+          const topics = [];
+          const regex = /topic:([a-zA-Z0-9_-]+)/g;
+          let match;
+          while ((match = regex.exec(query)) !== null) {
+            topics.push(match[1].toLowerCase());
+          }
+
+          if (topics.length > 0) {
+            // Find repos matching all the topics
+            const matchingRepos = repos.filter(repo => {
+               if(!repo.topics) return false;
+               const repoTopics = repo.topics.map(t => t.toLowerCase());
+               return topics.every(t => repoTopics.includes(t));
+            });
+
+            if (matchingRepos.length > 0) {
+              const li = document.createElement('li');
+              const span = document.createElement('span');
+              span.className = 'caret';
+              span.textContent = link.textContent;
+              
+              const ul = document.createElement('ul');
+              ul.className = 'nested';
+              
+              matchingRepos.forEach(repo => {
+                const repoLi = document.createElement('li');
+                repoLi.innerHTML = `<a target="_blank" rel="noopener noreferrer" href="${repo.html_url}">${repo.name}</a><br><small style="color:gray">${repo.description || ''}</small>`;
+                repoLi.style.marginTop = "6px";
+                repoLi.style.marginBottom = "8px";
+                ul.appendChild(repoLi);
+              });
+              
+              li.appendChild(span);
+              li.appendChild(ul);
+
+              span.addEventListener("click", function() {
+                const nested = this.parentElement.querySelector(".nested");
+                if (nested) nested.classList.toggle("active");
+                this.classList.toggle("caret-down");
+              });
+
+              // Clean up any trailing <br> after the link before replacing
+              const next = link.nextSibling;
+              if (next && next.tagName === 'BR') {
+                next.remove();
+              }
+              link.replaceWith(li);
+            }
+          }
+        });
+      } catch (err) {
+        console.error("Failed to load repos.json. Serving fallback.", err);
+        // Fallback for RePoCount
+        try {
+          const fallbackRes = await fetch("https://api.github.com/users/nofitnessforpurpose/repos");
+          const fallbackData = await fallbackRes.json();
+          document.getElementById("RePoCount").innerHTML = fallbackData.length > 2 ? fallbackData.length - 2 : fallbackData.length;
+        } catch (e) {}
+      }
     }
-    updateRepoCount();
+
+    initGitHubData();
   </script>
 </body>
 </html>
