@@ -52,6 +52,20 @@
     ]
   },
   {
+    "name": "Data-Pack-4",
+    "html_url": "https://github.com/nofitnessforpurpose/Data-Pack-4",
+    "description": "Organiser I & Organiser II - Data Pack Case (4)  - No Bump",
+    "topics": [
+      "case",
+      "datapack",
+      "nffp",
+      "organiser1",
+      "organiser2",
+      "psion",
+      "side-slot"
+    ]
+  },
+  {
     "name": "DataPack-JEDEC-8K-EPROM",
     "html_url": "https://github.com/nofitnessforpurpose/DataPack-JEDEC-8K-EPROM",
     "description": "Organiser 1 & Organiser II Data Pack - 8K EPROM - 2764 JEDEC Pinout",
